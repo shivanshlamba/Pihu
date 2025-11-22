@@ -358,7 +358,7 @@
             return !!this.blooms.length;
         }, 
         flower: function(num) {
-            var s = this, blooms = s.bloomsCache.splice(0, num);
+            var s = this, blooms = s.bloomsCache.splice(0, num=4);
             for (var i = 0; i < blooms.length; i++) {
                 s.addBloom(blooms[i]);
             }
