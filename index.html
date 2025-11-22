@@ -173,7 +173,7 @@
         var textAnimate = eval(Jscex.compile("async", function () {
             $("#code").show().typewriter();
         }));
-	    
+	 
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
@@ -183,7 +183,10 @@
         }));
 
         runAsync().start();
-	    jumpAnimate().start();
+	   // ⭐ START PETAL FALLING HERE (AFTER BLOOM IS COMPLETE)
+		setTimeout(function () {
+    		jumpAnimate().start();
+		}, 3000);
     })();
     </script>
 </body>
