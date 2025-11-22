@@ -163,6 +163,12 @@
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
+		var jumpAnimate = eval(Jscex.compile("async", function () {
+			while (true) {
+       			tree.jump();
+        		$await(Jscex.Async.sleep(25));
+         }
+         }));		
 
         var textAnimate = eval(Jscex.compile("async", function () {
             $("#code").show().typewriter();
@@ -174,6 +180,7 @@
             $await(flowAnimate());
             $await(moveAnimate());
             textAnimate().start();
+			jumpAnimate().start();
         }));
 
         runAsync().start();
